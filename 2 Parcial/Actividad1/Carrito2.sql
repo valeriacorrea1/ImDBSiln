@@ -1,0 +1,29 @@
+CREATE TABLE CARRITO2 (
+ID INT(16) NOT NULL,
+ARTICULO VARCHAR(16) NOT NULL,
+PRIMARY KEY(ID, ARTICULO)
+);
+
+CREATE TABLE CARRITO1 (
+ID INT(16) NOT NULL,
+ARTICULO VARCHAR(16) NOT NULL,
+PRIMARY KEY(ID, ARTICULO)
+);
+
+INSERT INTO CARRITO1 Values 
+(1, 'Azucar'),
+(2, 'Pan'),
+(3, 'Jugo'),
+(4, 'Refresco'),
+(5, 'Harina');
+
+INSERT INTO CARRITO2 Values 
+(1, 'Azucar'),
+(2, 'Pan'),
+(6, 'Mantequilla'),
+(7, 'Queso'),
+(8, 'Manzana'); 
+
+Select * from CARRITO1 left join CARRITO2 on CARRITO1.ARTICULO = CARRITO2.ARTICULO
+UNION 
+Select * from CARRITO1 right join CARRITO2 on CARRITO1.ARTICULO = Carrito2.ARTICULO;
